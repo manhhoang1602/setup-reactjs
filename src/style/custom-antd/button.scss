@@ -1,0 +1,46 @@
+$green: rgba(0, 128, 0, 1);
+$green-light: rgba(0, 128, 0, 0.75);
+
+$orange: rgba(255, 193, 7, 1);
+$orange-light: rgba(255, 193, 7, 0.75);
+
+$min-width: 120px;
+$border-radius: 4px;
+
+.ant-btn{
+  min-width: $min-width !important;
+  border-radius: $border-radius !important;
+}
+
+.btn-success {
+  background-color: $green !important;
+  border: 1px solid $green !important;
+  outline: $green !important;
+  color: white !important;
+
+  &:hover {
+    background-color: $green-light !important;
+    border: 1px solid $green-light !important;
+    outline: 1.5px $green-light !important;
+  }
+}
+
+.btn-warning {
+  background-color: $orange !important;
+  border: 1px solid $orange !important;
+  outline: $orange !important;
+
+  &:hover {
+    background-color: $orange-light !important;
+    border: 1px solid $orange-light !important;
+    outline: 1.5px $orange-light !important;
+  }
+}
+
+.btn-warning-text {
+  color: $orange !important;
+}
+
+.btn-success-text {
+  color: $green !important;
+}

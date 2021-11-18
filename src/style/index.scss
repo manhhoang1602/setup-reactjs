@@ -1,0 +1,92 @@
+@import "src/commons/editor/EditorComponent";
+@import "custom-antd/button";
+@import "custom-antd/form";
+@import "mixin";
+
+@import "src/modules/login/Login";
+
+//STYLE COMMONS
+//FONT
+.font-bold {
+  font-weight: bold;
+}
+
+//END FONT
+
+//FLEX
+.d-flex {
+  display: flex;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-item-center {
+  align-items: center;
+}
+
+.align-item-end {
+  align-items: flex-end;
+}
+
+.align-item-baseline {
+  align-items: baseline;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+
+//END FLEX
+
+//SCROLL STYLE
+.scroll-custom {
+  @include custom-scroll;
+}
+
+//END SCROLL STYLE
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif !important;
+  color: gray;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}

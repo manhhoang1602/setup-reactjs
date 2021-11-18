@@ -1,0 +1,14 @@
+.label-left{
+  .ant-form-item-label{
+    text-align: left;
+  }
+}
+
+.ant-form-item-label{
+  font-weight: bold;
+
+  label{
+    color: gray !important;
+    font-size: 15px !important;
+  }
+}
