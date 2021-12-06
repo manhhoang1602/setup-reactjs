@@ -18,12 +18,17 @@ export const apiCall = async (
   url: string,
   method: 'GET' | 'PUT' | 'POST' | 'DELETE',
   data: { [key: string]: any } | undefined,
-  isToken: boolean = true
+  isToken: boolean = true,
+  token?: string
 ): Promise<IApiResponse<any>> => {
   let headers: { [key: string]: string } = {};
   headers['Content-Type'] = 'application/json';
 
-  if (isToken) headers[TOKEN_NAME] = getToken() || '';
+  if (token) {
+    headers[TOKEN_NAME] = token;
+  } else {
+    if (isToken) headers[TOKEN_NAME] = getToken() || '';
+  }
 
   return new Promise<any>((resolve, reject) => {
     Axios({
@@ -66,19 +71,34 @@ export const apiCall = async (
 };
 
 export class Baservices {
-  public static async getMethod(_url: string, _isToken: boolean): Promise<IApiResponse<any>> {
+  public static async getMethod(_url: string, _isToken: boolean, _token?: string): Promise<IApiResponse<any>> {
     return apiCall(_url, 'GET', undefined, _isToken);
   }
 
-  public static async postMethod(_url: string, _data?: any, _isToken?: boolean): Promise<IApiResponse<any>> {
+  public static async postMethod(
+    _url: string,
+    _data?: any,
+    _isToken?: boolean,
+    _token?: string
+  ): Promise<IApiResponse<any>> {
     return apiCall(_url, 'POST', _data, _isToken);
   }
 
-  public static async putMethod(_url: string, _data?: any, _isToken?: boolean): Promise<IApiResponse<any>> {
+  public static async putMethod(
+    _url: string,
+    _data?: any,
+    _isToken?: boolean,
+    _token?: string
+  ): Promise<IApiResponse<any>> {
     return apiCall(_url, 'PUT', _data, _isToken);
   }
 
-  public static async deleteMethod(_url: string, _data?: any, _isToken?: boolean): Promise<IApiResponse<any>> {
+  public static async deleteMethod(
+    _url: string,
+    _data?: any,
+    _isToken?: boolean,
+    _token?: string
+  ): Promise<IApiResponse<any>> {
     return apiCall(_url, 'DELETE', _data, _isToken);
   }
 }

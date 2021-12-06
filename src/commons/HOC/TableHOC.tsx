@@ -33,7 +33,7 @@ const TableHoc: React.FC<IProps> = ({ bordered, colorActive, children }) => {
   return (
     <div ref={tableRef}>
       {Children.map(children, (child: any) => {
-        console.log(child);
+        // console.log(child);
         const props = {
           expandable: {
             ...child.props.expandable,
@@ -44,10 +44,11 @@ const TableHoc: React.FC<IProps> = ({ bordered, colorActive, children }) => {
             expandedRowKeys: expandedRowKeys,
           },
           bordered: bordered ? bordered : true,
+          scroll: { ...child.props.scroll, x: 700 },
           pagination: {
             ...child.props.pagination,
             showSizeChanger: false,
-            pageSize: child.props.pagination.pageSize ? child.props.pagination.pageSize : Config._limit,
+            pageSize: child.props.pagination?.pageSize ? child.props.pagination.pageSize : Config._limit,
           },
         };
         return cloneElement(child, props);

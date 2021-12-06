@@ -14,7 +14,7 @@ const AdminRouter: React.FC = () => {
   return (
     <Switch>
       {arrAdminRouter.map((value: any) => (
-        <Route exact path={value.path} component={value.component} />
+        <Route key={value.path} exact path={value.path} component={value.component} />
       ))}
     </Switch>
   );

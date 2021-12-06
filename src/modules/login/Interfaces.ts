@@ -1,14 +1,14 @@
 import { IResBody } from '../../services/Interfaces';
 
 export interface IResLoginData {
-  profile_picture_url: string;
+  profilePictureUrl: string;
   id: number;
-  user_id: number;
-  user_name: string;
+  userId: number;
+  userName: string;
   token: string;
   email: string;
   status: number;
-  profile_picture_path: string;
+  profilePicturePath: string;
 }
 
 export interface IResLogin extends IResBody {

@@ -23,6 +23,7 @@
 
     .wrapper-content-header {
       display: flex;
+      justify-content: space-between;
 
       .brand-component {
         width: 200px;
@@ -37,6 +38,19 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        .wrapper-icon-header {
+          i {
+            padding: 11px 11px;
+            border-radius: 50%;
+            transition: all 0.25s ease-in;
+
+            &:hover {
+              @include box-shadow3;
+              transform: scale(1.15);
+            }
+          }
+        }
       }
     }
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Layout } from 'antd';
 import { HeaderComponent } from './HeaderComponent';
 import Sider from 'antd/es/layout/Sider';
-import { Content } from 'antd/es/layout/layout';
+import { Content, Footer } from 'antd/es/layout/layout';
 import MenuComponent, { dataMenuAdmin } from './MenuComponent';
 import AdminRouter from '../../router/AdminRouter';
 
@@ -26,7 +26,10 @@ const LayoutComponent = () => {
         </Sider>
 
         <Layout className="layout__site-layout">
-          <Content className="layout__site-layout__site-layout-background">{getRouter()}</Content>
+          <Content className="layout__site-layout__site-layout-background">
+            <div style={{ minHeight: 'calc(100vh - 150px)' }}>{getRouter()}</div>
+            <Footer style={{ textAlign: 'center' }}>Hoang TM ©2021 </Footer>
+          </Content>
         </Layout>
       </Layout>
     </div>
